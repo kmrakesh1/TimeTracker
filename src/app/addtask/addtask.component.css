@@ -1,0 +1,15 @@
+.leftitem{
+    justify-content: flex-start !important;
+}
+.buttonsave{
+    background-color: #5056ED;
+    color: #fff;
+    width: 135px;
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid #ffff;
+}
+
+.validation-error{
+    color:red;
+}

@@ -1,0 +1,37 @@
+<br>
+<div class="center">
+    <div class="container">
+        <div class="row">
+            <div class="col taskname">
+                {{name}}
+            </div>
+            <div class="col-md-auto">
+                <p class="line">|</p>
+            </div>
+            <div class="col-md-auto">
+                <p class="display">{{format(mm)}}:{{format(ss)}}:{{format(ms)}}</p>
+            </div>
+            <div class="col col-lg-2">
+                <button [ngClass]="isRunning ? 'buttonstop':'buttonstart'" (click)="startTimer()">
+                    {{isRunning ? 'Stop' : 'Start'}}
+                </button>
+                
+            </div>
+            <div class="col-md-auto">
+                <button type="button" class="btn btn-primary btn-circle close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+        </div>
+        <span class="historylabel">History :</span><br>
+        <ng-container *ngIf="activeEvent!=''">
+            <p class="padding20"> {{ activeEvent }}<br></p>
+        </ng-container>
+        <ng-container *ngIf="timerEvents.length">
+            <p class="padding20" *ngFor="let events of timerEvents; let i=index">
+                {{ events }}<br>
+            </p>
+        </ng-container>
+    </div>
+
+</div>
